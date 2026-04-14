@@ -34,6 +34,6 @@ It provides real‑time hardware statistics in a compact dashboard, designed for
 
 🎯 Purpose
 UsageX is ideal for users who want a simple, elegant, and reliable way to monitor their system — with optional Discord reporting for remote tracking or automation.
-
-Screenshot 2026-04-14 233800
+<img width="795" height="542" alt="Screenshot 2026-04-14 233800" src="https://github.com/user-attachments/assets/4cc0315c-6eca-4e6c-a5ed-50e5270c6700" />
 Full Changelog: https://github.com/AVARIX1/UsageX/commits/Program
+
