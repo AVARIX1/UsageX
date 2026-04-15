@@ -37,5 +37,6 @@ UsageX is ideal for users who want a simple, elegant, and reliable way to monito
 <img width="795" height="542" alt="Screenshot 2026-04-14 233800" src="https://github.com/user-attachments/assets/4cc0315c-6eca-4e6c-a5ed-50e5270c6700" />
 
 Full Changelog: https://github.com/AVARIX1/UsageX/commits/Program
+
 Join our community - https://discord.gg/5PxXpf7GRx
 
