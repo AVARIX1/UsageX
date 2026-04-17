@@ -3,791 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UsageX – All‑in‑One System Dashboard</title>
+    <title>UsageX — System Dashboard</title>
+
     <style>
-        :root {
-            --bg: #050509;
-            --bg-alt: #0b0b12;
-            --card: #11111b;
-            --accent: #ff4b4b;
-            --accent-soft: rgba(255, 75, 75, 0.35);
-            --accent-2: #5865f2;
-            --text: #f5f5f7;
-            --muted: #a0a0b3;
-            --border: #1e1e2a;
-            --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
-            --radius-lg: 18px;
-            --radius-md: 12px;
-            --radius-pill: 999px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #1a1a2f 0, #050509 45%, #020208 100%);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Fire-like particles */
-        .particles {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #ffb347 0, #ff4b4b 40%, transparent 70%);
-            opacity: 0.0;
-            animation: rise 6s linear infinite;
-            filter: blur(0.5px);
-        }
-
-        .particle:nth-child(3n) {
-            width: 8px;
-            height: 8px;
-            animation-duration: 7.5s;
-        }
-
-        .particle:nth-child(4n) {
-            width: 4px;
-            height: 4px;
-            animation-duration: 5.5s;
-        }
-
-        @keyframes rise {
-            0% {
-                transform: translateY(40vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            50% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-40vh) translateX(40px);
-                opacity: 0;
-            }
-        }
-
-        .glow-orb {
-            position: fixed;
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 75, 75, 0.35), transparent 70%);
-            filter: blur(18px);
-            opacity: 0.55;
-            top: -120px;
-            right: -120px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .glow-orb-2 {
-            position: fixed;
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(88, 101, 242, 0.35), transparent 70%);
-            filter: blur(18px);
-            opacity: 0.45;
-            bottom: -120px;
-            left: -120px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        main {
-            position: relative;
-            z-index: 1;
+            background: #0d0d0d;
+            color: #eaeaea;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
 
         header {
-            max-width: 1100px;
-            margin: 60px auto 40px;
-            padding: 32px 24px 40px;
-            border-radius: 26px;
-            background: linear-gradient(135deg, rgba(10, 10, 20, 0.96), rgba(8, 8, 16, 0.98));
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            box-shadow: var(--shadow-soft);
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-            gap: 32px;
-            align-items: center;
-        }
-
-        @media (max-width: 900px) {
-            header {
-                grid-template-columns: 1fr;
-                margin: 30px 16px 20px;
-                padding: 24px 18px 28px;
-            }
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 12px;
-            border-radius: var(--radius-pill);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #4caf50;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.9);
+            padding: 120px 40px 80px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 44px;
-            margin: 0 0 10px;
-            letter-spacing: 0.06em;
+            font-size: 64px;
+            font-weight: 300;
+            margin: 0;
             text-transform: uppercase;
+            letter-spacing: 6px;
         }
 
-        .title-accent {
-            background: linear-gradient(120deg, #ffb347, #ff4b4b);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .subtitle {
-            font-size: 17px;
-            color: var(--muted);
-            max-width: 520px;
-        }
-
-        .buttons {
-            margin-top: 24px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        p.subtitle {
+            margin-top: 20px;
+            font-size: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
         }
 
         .btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 22px;
-            border-radius: var(--radius-pill);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid transparent;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff6a3d, #ff4b4b);
-            color: #fff;
-            box-shadow: 0 12px 30px rgba(255, 75, 75, 0.45);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 40px rgba(255, 75, 75, 0.6);
-        }
-
-        .btn-outline {
-            background: rgba(15, 15, 25, 0.9);
-            color: var(--text);
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        .btn-outline:hover {
-            background: rgba(25, 25, 40, 0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-        }
-
-        .btn-discord {
-            background: linear-gradient(135deg, #5865f2, #4048c9);
-            color: #fff;
-            box-shadow: 0 12px 30px rgba(88, 101, 242, 0.45);
-        }
-
-        .btn-discord:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 40px rgba(88, 101, 242, 0.7);
-        }
-
-        .btn-coffee {
-            background: linear-gradient(135deg, #ffdd00, #ffb347);
-            color: #000;
-            box-shadow: 0 12px 30px rgba(255, 221, 0, 0.45);
-        }
-
-        .btn-coffee:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 40px rgba(255, 221, 0, 0.7);
-        }
-
-        .btn span.icon {
-            font-size: 18px;
-        }
-
-        .hero-meta {
-            margin-top: 18px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        .hero-meta-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .hero-meta-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .hero-preview {
-            position: relative;
-            border-radius: 22px;
-            background: radial-gradient(circle at top left, rgba(255, 75, 75, 0.18), transparent 55%), 
-                        radial-gradient(circle at bottom right, rgba(88, 101, 242, 0.18), transparent 55%),
-                        #050509;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 18px;
-            box-shadow: var(--shadow-soft);
-            overflow: hidden;
-        }
-
-        .hero-window {
-            border-radius: 18px;
-            background: linear-gradient(145deg, #0b0b12, #050509);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 16px;
-            position: relative;
-        }
-
-        .hero-window-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 14px;
-        }
-
-        .window-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-        }
-
-        .dot.red { background: #ff5f57; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #28c840; }
-
-        .window-title {
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 14px;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hero-card {
-            background: #0b0b14;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 12px 14px;
-        }
-
-        .hero-card-title {
-            font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            margin-bottom: 6px;
-        }
-
-        .stat-label {
-            color: var(--muted);
-        }
-
-        .stat-value {
-            color: var(--text);
-        }
-
-        .stat-bar {
-            position: relative;
-            width: 100%;
-            height: 7px;
-            border-radius: 999px;
-            background: #151521;
-            overflow: hidden;
-            margin-top: 4px;
-        }
-
-        .stat-bar-fill {
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background: linear-gradient(90deg, #ffb347, #ff4b4b);
-            transform-origin: left;
-            animation: pulseBar 3.5s ease-in-out infinite;
-        }
-
-        .stat-bar-fill.ram {
-            background: linear-gradient(90deg, #5865f2, #9b6bff);
-            animation-delay: 0.4s;
-        }
-
-        .stat-bar-fill.gpu {
-            background: linear-gradient(90deg, #4caf50, #8bc34a);
-            animation-delay: 0.8s;
-        }
-
-        @keyframes pulseBar {
-            0% { transform: scaleX(0.45); }
-            50% { transform: scaleX(0.9); }
-            100% { transform: scaleX(0.55); }
-        }
-
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .tag {
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            color: var(--muted);
-        }
-
-        .cmd-box {
-            background: #050509;
-            border-radius: 10px;
-            padding: 10px 12px;
-            font-family: "Consolas", "Fira Code", monospace;
-            font-size: 12px;
-            color: #e6e6e6;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 6px;
-        }
-
-        .cmd-prefix {
-            color: #4caf50;
-        }
-
-        .cmd-blink {
             display: inline-block;
-            width: 7px;
-            height: 13px;
-            background: #e6e6e6;
-            margin-left: 3px;
-            animation: blink 1s steps(1) infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            50.01%, 100% { opacity: 0; }
-        }
-
-        .section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 20px 10px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 26px;
-            margin-bottom: 8px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 15px;
-            color: var(--muted);
-            max-width: 620px;
-            margin: 0 auto 26px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 18px;
-            margin-top: 10px;
-        }
-
-        .feature-card {
-            background: var(--card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            padding: 16px 16px 18px;
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top, rgba(255, 75, 75, 0.18), transparent 55%);
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-icon {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .feature-title {
+            margin: 20px 10px;
+            padding: 14px 32px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
             font-size: 16px;
-            margin-bottom: 6px;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        .feature-text {
-            font-size: 14px;
-            color: var(--muted);
+        .btn:hover {
+            background: #fff;
+            color: #000;
         }
 
-        .about {
-            margin-top: 30px;
-            background: rgba(5, 5, 12, 0.9);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 22px 20px;
-            display: grid;
-            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
-            gap: 18px;
+        section {
+            padding: 100px 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
         }
 
-        @media (max-width: 800px) {
-            .about {
-                grid-template-columns: 1fr;
-            }
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
         }
 
-        .about-title {
+        p {
             font-size: 18px;
-            margin-bottom: 6px;
+            opacity: 0.85;
+            line-height: 1.7;
         }
 
-        .about-text {
-            font-size: 14px;
-            color: var(--muted);
+        .feature-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
         }
 
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .about-tag {
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--muted);
-        }
-
-        .about-highlight {
-            font-size: 14px;
-            padding: 12px 14px;
-            border-radius: 12px;
-            background: radial-gradient(circle at left, rgba(255, 75, 75, 0.25), transparent 60%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .feature {
+            border-top: 1px solid #333;
+            padding-top: 20px;
         }
 
         footer {
-            max-width: 1100px;
-            margin: 30px auto 40px;
-            padding: 18px 20px 10px;
+            padding: 60px 20px;
             text-align: center;
-            font-size: 13px;
-            color: var(--muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            opacity: 0.5;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-<div class="particles">
-    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="particle" style="left: 25%; animation-delay: 1.2s;"></div>
-    <div class="particle" style="left: 40%; animation-delay: 0.6s;"></div>
-    <div class="particle" style="left: 55%; animation-delay: 1.8s;"></div>
-    <div class="particle" style="left: 70%; animation-delay: 0.9s;"></div>
-    <div class="particle" style="left: 85%; animation-delay: 1.5s;"></div>
-</div>
-<div class="glow-orb"></div>
-<div class="glow-orb-2"></div>
 
-<main>
-    <header>
-        <div>
-            <div class="badge">
-                <span class="badge-dot"></span>
-                <span>UsageX • All‑in‑One System Dashboard</span>
-            </div>
-            <h1><span class="title-accent">UsageX</span> for Windows</h1>
-            <p class="subtitle">
-                Instead of opening 5 different apps and searching commands online, UsageX gives you a single, clean,
-                powerful dashboard: system specs, live usage, CMD tools, info, settings and more — all in one place.
-            </p>
+<header>
+    <h1>UsageX</h1>
+    <p class="subtitle">
+        A clean, minimal and powerful system dashboard for Windows.  
+        Inspired by premium cinematic design — built for clarity, focus and precision.
+    </p>
 
-            <div class="buttons">
-                <a href="https://github.com/AVARIX1/UsageX/releases" class="btn btn-primary">
-                    <span class="icon">⬇</span>
-                    <span>Download UsageX</span>
-                </a>
-                <a href="https://discord.gg/YOUR_DISCORD_INVITE" class="btn btn-discord">
-                    <span class="icon">💬</span>
-                    <span>Join Discord</span>
-                </a>
-                <a href="https://buymeacoffee.com/YOUR_BUYMEACOFFEE" class="btn btn-coffee">
-                    <span class="icon">☕</span>
-                    <span>Buy Me a Coffee</span>
-                </a>
-                <a href="https://github.com/AVARIX1/UsageX" class="btn btn-outline">
-                    <span class="icon">⭐</span>
-                    <span>View on GitHub</span>
-                </a>
-            </div>
+    <a href="https://github.com/AVARIX1/UsageX/Program5" class="btn">DOWNLOAD</a>
+    <a href="https://discord.gg/k22UgKcyu5" class="btn">DISCORD</a>
+    <a href="https://buymeacoffee.com/mihaibartu0" class="btn">SUPPORT</a>
+</header>
 
-            <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <span class="hero-meta-dot"></span>
-                    <span>Clean, fast, no bloat</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span class="hero-meta-dot"></span>
-                    <span>Inspired by premium dashboards</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span class="hero-meta-dot"></span>
-                    <span>Built by AVARIX</span>
-                </div>
-            </div>
+<section>
+    <h2>What is UsageX</h2>
+    <p>
+        UsageX is a modern, minimal and efficient dashboard that brings together  
+        system usage, hardware info, CMD tools and settings — all in one place.  
+        No clutter. No noise. Just clean information, presented with purpose.
+    </p>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Real‑Time Usage</h3>
+            <p>CPU, RAM, GPU and storage — displayed clearly and instantly.</p>
         </div>
 
-        <div class="hero-preview">
-            <div class="hero-window">
-                <div class="hero-window-top">
-                    <div class="window-dots">
-                        <div class="dot red"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot green"></div>
-                    </div>
-                    <div class="window-title">UsageX • System Dashboard</div>
-                </div>
-
-                <div class="hero-grid">
-                    <div class="hero-card">
-                        <div class="hero-card-title">Live Usage</div>
-                        <div class="stat-row">
-                            <span class="stat-label">CPU</span>
-                            <span class="stat-value">37%</span>
-                        </div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill"></div>
-                        </div>
-
-                        <div class="stat-row" style="margin-top: 10px;">
-                            <span class="stat-label">RAM</span>
-                            <span class="stat-value">62%</span>
-                        </div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill ram"></div>
-                        </div>
-
-                        <div class="stat-row" style="margin-top: 10px;">
-                            <span class="stat-label">GPU</span>
-                            <span class="stat-value">24%</span>
-                        </div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill gpu"></div>
-                        </div>
-
-                        <div class="tag-row">
-                            <span class="tag">Real‑time</span>
-                            <span class="tag">Clean UI</span>
-                            <span class="tag">No clutter</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-card">
-                        <div class="hero-card-title">CMD Tools & Info</div>
-                        <div class="cmd-box">
-                            <span class="cmd-prefix">C:\></span> systeminfo<br>
-                            <span class="cmd-prefix">C:\></span> ipconfig /all<br>
-                            <span class="cmd-prefix">C:\></span> wmic cpu get name<span class="cmd-blink"></span>
-                        </div>
-                        <div class="tag-row" style="margin-top: 10px;">
-                            <span class="tag">One‑click commands</span>
-                            <span class="tag">System specs</span>
-                            <span class="tag">Power tools</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="section">
-        <h2 class="section-title">Why UsageX?</h2>
-        <p class="section-subtitle">
-            UsageX is built for the moments when you don’t want to hunt for 5 different tools, open multiple windows
-            or type commands manually. You open UsageX and everything you need is already there — in a single,
-            eye‑catchy dashboard that feels like a premium app, not a random utility.
-        </p>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">All‑in‑One Dashboard</div>
-                <div class="feature-text">
-                    CPU, RAM, GPU, storage, system info, CMD tools, settings — all in one clean interface.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🖥</div>
-                <div class="feature-title">System Specs & Info</div>
-                <div class="feature-text">
-                    Quickly see your hardware and system details without digging through menus or separate apps.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💻</div>
-                <div class="feature-title">CMD Commands, Simplified</div>
-                <div class="feature-text">
-                    Useful commands pre‑defined and ready to run. No more searching syntax every single time.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <div class="feature-title">Clean, Eye‑Catchy UI</div>
-                <div class="feature-text">
-                    Inspired by premium dashboards: balanced layout, modern colors, and a strong focus on presentation.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⚙</div>
-                <div class="feature-title">Smart Settings</div>
-                <div class="feature-text">
-                    Control update intervals, visual options, webhook integration and other advanced settings.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">❤️</div>
-                <div class="feature-title">Support the Project</div>
-                <div class="feature-text">
-                    If you enjoy UsageX, you can support development via Buy Me a Coffee or by joining the community.
-                </div>
-            </div>
+        <div class="feature">
+            <h3>System Specs</h3>
+            <p>All your hardware information in one clean, structured view.</p>
         </div>
 
-        <div class="about">
-            <div>
-                <div class="about-title">About AVARIX & UsageX</div>
-                <p class="about-text">
-                    UsageX is created by AVARIX, a developer focused on clean UI, premium presentation and tools that
-                    actually feel like a serious product. The goal is simple: make UsageX the first app you open when
-                    you start your PC — and the last one you close.
-                </p>
-                <div class="about-tags">
-                    <span class="about-tag">Solo dev</span>
-                    <span class="about-tag">Premium dashboard vibe</span>
-                    <span class="about-tag">Windows‑focused</span>
-                    <span class="about-tag">Community‑driven</span>
-                </div>
-            </div>
-            <div class="about-highlight">
-                <strong>“Instead of opening 5 apps and searching commands online…”</strong><br>
-                UsageX takes everything you use often — usage, info, commands, settings — and puts it into a single,
-                polished dashboard that looks and feels like a professional tool.
-            </div>
+        <div class="feature">
+            <h3>CMD Tools</h3>
+            <p>Useful commands, simplified and ready to run with one click.</p>
         </div>
-    </section>
 
-    <footer>
-        © 2026 UsageX by AVARIX — All rights reserved. · 
-        <a href="https://github.com/AVARIX1/UsageX">GitHub</a> · 
-        <a href="https://discord.gg/k22UgKcyu5">Discord</a> · 
-        <a href="https://buymeacoffee.com/mihaibartu0">Buy Me a Coffee</a>
-    </footer>
-</main>
+        <div class="feature">
+            <h3>Minimal UI</h3>
+            <p>A calm, cinematic interface inspired by premium software design.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>About the Developer</h2>
+    <p>
+        UsageX is created by AVARIX — a developer focused on clarity,  
+        premium UI and tools that feel intentional, polished and meaningful.
+    </p>
+</section>
+
+<footer>
+    © 2024-2026 UsageX by AVARIX — All rights reserved.
+</footer>
 
 </body>
 </html>
-
