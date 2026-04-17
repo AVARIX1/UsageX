@@ -34,7 +34,7 @@ Built for clarity, speed, and a premium user experience.
 ## 📦 Installation
 
 1. Download the latest release from the **Releases** section.  
-2. Run the installer or the standalone executable.  
+2. Run the installer.  
 3. Launch UsageX.
 
 ---
