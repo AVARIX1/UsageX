@@ -27,7 +27,11 @@ Built for clarity, speed, and a premium user experience.
 
 ## 📸 Screenshots
 
-<img width="795" height="542" alt="Screenshot 2026-04-14 233800" src="https://github.com/user-attachments/assets/4cc0315c-6eca-4e6c-a5ed-50e5270c6700" />
+<img width="1056" height="683" alt="Screenshot 2026-04-17 130931" src="https://github.com/user-attachments/assets/fa830bee-1e94-411c-b0ab-4760c00ea900" />
+
+<img width="952" height="646" alt="Screenshot 2026-04-17 131025" src="https://github.com/user-attachments/assets/286c99ad-dda7-4fb4-8530-7125517e8898" />
+
+
 
 ---
 
