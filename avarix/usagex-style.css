@@ -1,1 +1,363 @@
+/* ===========================
+   ROOT VARS (gradient dinamic)
+=========================== */
+:root {
+    --grad1: #0c0c0c;
+    --grad2: #1a1a1a;
+    --grad3: #111111;
+    --grad4: #1f1f1f;
+    --grad5: #0e0e0e;
+}
+
+/* HERO */
+body.section-hero {
+    --grad1: #0c0c0c;
+    --grad2: #1a1a1a;
+    --grad3: #111111;
+    --grad4: #1f1f1f;
+    --grad5: #0e0e0e;
+}
+
+/* ABOUT */
+body.section-about {
+    --grad1: #0d1a24;
+    --grad2: #112a38;
+    --grad3: #0e1f2c;
+    --grad4: #1a3a4d;
+    --grad5: #0b151d;
+}
+
+/* FEATURES */
+body.section-features {
+    --grad1: #0d241a;
+    --grad2: #124a33;
+    --grad3: #0f3a28;
+    --grad4: #1a6b4d;
+    --grad5: #0a1f17;
+}
+
+/* DEVELOPER */
+body.section-dev {
+    --grad1: #1a0d24;
+    --grad2: #2e1247;
+    --grad3: #240f38;
+    --grad4: #4a1a7a;
+    --grad5: #160a1f;
+}
+
+/* FOOTER */
+body.section-footer {
+    --grad1: #0a0a0a;
+    --grad2: #141414;
+    --grad3: #101010;
+    --grad4: #1c1c1c;
+    --grad5: #080808;
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0d0d;
+    color: #e5e5e5;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hide default scrollbar */
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* ===========================
+   DOT SCROLLBAR
+=========================== */
+.dot-scrollbar {
+    position: fixed;
+    right: 28px;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    z-index: 999;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #555;
+    border-radius: 50%;
+    transition: 0.25s ease;
+    opacity: 0.5;
+}
+
+.dot.active-main {
+    background: #ffffff;
+    transform: translateX(-10px) scale(1.6);
+    opacity: 1;
+}
+
+.dot.active-secondary {
+    background: #cccccc;
+    transform: translateX(-6px) scale(1.2);
+    opacity: 0.9;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+h1, h2, h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+p {
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+#hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        radial-gradient(circle at 25% 30%, rgba(255,255,255,0.18), transparent 65%),
+        radial-gradient(circle at 75% 70%, rgba(255,255,255,0.12), transparent 70%),
+        linear-gradient(120deg,
+            var(--grad1),
+            var(--grad2),
+            var(--grad3),
+            var(--grad4),
+            var(--grad5)
+        );
+
+    background-size: 200% 200%, 250% 250%, 400% 400%;
+    animation:
+        glow1 16s ease-in-out infinite,
+        glow2 22s ease-in-out infinite,
+        gradientMove 20s ease-in-out infinite;
+
+    opacity: 0.75;
+    z-index: -1;
+
+    /* SMOOTH TRANSITION */
+    transition:
+        background 1.5s ease-in-out,
+        background-position 1.5s ease-in-out,
+        opacity 1.5s ease-in-out;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%, 0% 50%, 0% 50%; }
+    50% { background-position: 100% 50%, 100% 50%, 100% 50%; }
+    100% { background-position: 0% 50%, 0% 50%, 0% 50%; }
+}
+
+@keyframes glow1 {
+    0% { background-position: 25% 30%; }
+    50% { background-position: 35% 40%; }
+    100% { background-position: 25% 30%; }
+}
+
+@keyframes glow2 {
+    0% { background-position: 75% 70%; }
+    50% { background-position: 65% 60%; }
+    100% { background-position: 75% 70%; }
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.ux-buttons {
+    margin-top: 50px;
+}
+
+.btn-ux {
+    display: inline-block;
+    padding: 14px 38px;
+    margin: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: 0.25s ease;
+}
+
+.btn-ux:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ===========================
+   SCROLL INDICATOR
+=========================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 46px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    opacity: 0.6;
+    animation: fadeIn 2s ease forwards;
+}
+
+.scroll-indicator span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnim 1.8s infinite ease-in-out;
+}
+
+@keyframes scrollAnim {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    50% { opacity: 1; transform: translate(-50%, 12px); }
+    100% { opacity: 0; transform: translate(-50%, 24px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.6; }
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+section {
+    padding: 120px 40px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+#features h2 {
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+}
+
+.feature {
+    padding: 20px 10px;
+    border-top: 1px solid #2a2a2a;
+    transition: 0.3s ease;
+}
+
+.feature:hover {
+    border-top-color: #fff;
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.feature p {
+    opacity: 0.75;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0.45;
+    font-size: 14px;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .btn-ux {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .dot-scrollbar {
+        right: 18px;
+        padding: 30px 0;
+    }
+}
 
