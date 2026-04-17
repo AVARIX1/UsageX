@@ -3,7 +3,7 @@
 A modern, themeable system dashboard with optional Discord webhook integration.  
 Built for clarity, speed, and a premium user experience.
 
-© 2024 AVARIX — All Rights Reserved
+© 2026 AVARIX — All Rights Reserved
 
 ---
 
