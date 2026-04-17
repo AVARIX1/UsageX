@@ -1,40 +1,98 @@
-🚀 UsageX – Lightweight System Monitor for Windows
-UsageX is a fast, clean, and modern system monitoring tool built with Python + PyQt6.
-It provides real‑time hardware statistics in a compact dashboard, designed for clarity and zero lag.
+# UsageX
 
-🔧 Key Features
-🧠 CPU Monitoring — Live usage, frequency, and per‑core breakdown
+A modern, themeable system dashboard with optional Discord webhook integration.  
+Built for clarity, speed, and a premium user experience.
 
-🧵 Logical Core Display — Each core shown clearly on its own line
+© 2024 AVARIX — All Rights Reserved
 
-🧮 RAM Usage — Real values in GB + percentage
+---
 
-💾 Disk Usage — Total / used storage with accurate reporting
+## 🚀 Features
 
-🌐 Network Stats — Upload, download, and ping
+- Real‑time system monitoring:
+  - CPU usage per core + frequency
+  - Memory usage
+  - Disk usage
+  - Network stats (sent/received, ping)
+  - System info (host, OS, processes, threads)
+- Optional Discord webhook integration
+- Multiple UI themes (`.usxtheme`)
+- Language support (EN, RO, DE, FR, ES, IT)
+- Clean, modern UI with premium popups
+- Configurable send interval
+- Restart‑aware settings system
+- Installer support (optional)
 
-🖥️ System Info — Hostname, OS version, processes, threads, uptime
+---
 
-🔔 Discord Integration — Sends automatic system reports at custom intervals
+## 📸 Screenshots
 
-🌍 Multi‑Language Support — English & Romanian
+<img width="795" height="542" alt="Screenshot 2026-04-14 233800" src="https://github.com/user-attachments/assets/4cc0315c-6eca-4e6c-a5ed-50e5270c6700" />
 
-🎨 Modern UI — Clean cards, readable fonts, no clutter
+---
 
-🪟 Frameless Window — Smooth dragging, no freezing (threaded stats engine)
+## 📦 Installation
 
-📦 Included in This Release
-✔️ UsageX.exe (one‑file build)
+1. Download the latest release from the **Releases** section.  
+2. Run the installer or the standalone executable.  
+3. Launch UsageX.
 
-✔️ Full source code
+---
 
-✔️ Custom application icon
+## ⚙️ Configuration
 
-✔️ Performance & stability improvements
+Open **Settings** to configure:
+
+- Language  
+- Send interval  
+- Webhook URL  
+- Discord User ID  
+- Theme  
+
+Buttons:
+
+- **Test Webhook**  
+- **Save Settings**  
+- **Reset Config**  
+- **Back to Dashboard**
+
+---
+
+## 🔒 Privacy & Security
+
+- No telemetry  
+- No tracking  
+- No remote logging  
+- All data stays on your device  
+- Webhook data is sent only if you configure it  
+
+See `PRIVACY.md` for full details.
+
+---
+
+## 📄 Legal
+
+- License: `LICENSE.md`  
+- Terms of Service: `TERMS.md`  
+- Privacy Policy: `PRIVACY.md`
+
+---
+
+## 💬 Support
+
+Support is voluntary.  
+For help or questions:  
+**mihaibartulov19@gmail.com**
+
+---
+
+## 🧩 Credits
+
+Developed by **AVARIX**.  
+Built with Python + PyQt.
 
 🎯 Purpose
 UsageX is ideal for users who want a simple, elegant, and reliable way to monitor their system — with optional Discord reporting for remote tracking or automation.
-<img width="795" height="542" alt="Screenshot 2026-04-14 233800" src="https://github.com/user-attachments/assets/4cc0315c-6eca-4e6c-a5ed-50e5270c6700" />
 
 Full Changelog: https://github.com/AVARIX1/UsageX/commits/Program
 
