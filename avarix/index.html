@@ -6,16 +6,12 @@
     <title>UsageX — System Dashboard</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/usagex-style.css">
 </head>
 
-<body>
+<body class="section-hero">
 
-<!-- HEADER / HERO -->
+<!-- HERO SECTION -->
 <section id="hero">
     <div class="hero-bg"></div>
 
@@ -27,20 +23,57 @@
         </p>
 
         <div class="ux-buttons">
-            <a href="https://github.com/AVARIX1/UsageX/releases" class="btn-ux">DOWNLOAD</a>
-            <a href="https://discord.gg/YOUR_DISCORD" class="btn-ux">DISCORD</a>
-            <a href="https://buymeacoffee.com/YOUR_LINK" class="btn-ux">SUPPORT</a>
+            <a href="https://github.com/AVARIX1/UsageX/Program5" class="btn-ux">DOWNLOAD</a>
+            <a href="https://discord.gg/k22UgKcyu5" class="btn-ux">DISCORD</a>
+            <a href="https://buymeacoffee.com/mihaibartu0" class="btn-ux">SUPPORT</a>
         </div>
     </div>
 </section>
+
+<!-- SCROLL INDICATOR -->
+<div class="scroll-indicator">
+    <span></span>
+</div>
+
+<!-- DOT SCROLLBAR -->
+<div class="dot-scrollbar" id="dot-scrollbar"></div>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>What is UsageX</h2>
     <p>
-        UsageX is a modern, minimal and efficient dashboard that brings together system usage,
-        hardware info, CMD tools and settings — all in one place.  
-        No clutter. No noise. Just clean information, presented with purpose.
+        UsageX is a modern system dashboard built to simplify the way users understand and interact with
+        their Windows environment. Instead of relying on multiple applications, hidden menus or scattered
+        system panels, UsageX brings everything together into a single, clean and minimal interface that
+        prioritizes clarity, structure and efficiency.
+        <br><br>
+        At its core, UsageX is designed around a simple philosophy: <strong>information should feel calm,
+        intentional and easy to read</strong>. Every element is placed with purpose. Every metric is displayed
+        with precision. The interface avoids visual noise, bright colors or unnecessary animations, focusing
+        instead on a cinematic, balanced presentation that feels professional and pleasant to use.
+        <br><br>
+        The dashboard provides real‑time monitoring for CPU, RAM, GPU, storage and network activity,
+        offering a transparent view of how your system behaves at any moment. Whether you're gaming,
+        developing, editing or simply browsing, UsageX gives you instant insight into performance without
+        overwhelming you with data.
+        <br><br>
+        Beyond monitoring, UsageX includes a detailed hardware specifications panel that gathers essential
+        information about your system — processor, graphics card, memory, motherboard, storage devices and
+        more. Instead of navigating through multiple Windows menus, everything is organized in one clean,
+        structured view.
+        <br><br>
+        The application also integrates a curated collection of useful CMD tools and system utilities,
+        allowing users to perform diagnostics, maintenance tasks or quick checks with a single click.
+        Commands that are normally hidden behind long strings or complex menus become accessible and easy
+        to use, even for beginners.
+        <br><br>
+        UsageX is built with stability and refinement in mind. Every update focuses on improving the
+        experience, polishing the interface and ensuring that the application feels reliable and consistent.
+        The goal is not to overload users with features, but to deliver a tool that feels intentional,
+        polished and meaningful — a companion for everyday system awareness.
+        <br><br>
+        Whether you're a casual user, a developer, a gamer or someone who simply values clean design,
+        UsageX offers a modern, minimal and powerful way to understand your system at a glance.
     </p>
 </section>
 
@@ -51,22 +84,32 @@
     <div class="feature-grid">
         <div class="feature">
             <h3>Real‑Time Usage</h3>
-            <p>CPU, RAM, GPU and storage — displayed clearly and instantly.</p>
+            <p>Instant monitoring for CPU, RAM, GPU, storage and network activity — presented clearly and without clutter.</p>
         </div>
 
         <div class="feature">
             <h3>System Specs</h3>
-            <p>All your hardware information in one clean, structured view.</p>
+            <p>A complete overview of your hardware: processor, graphics card, memory, motherboard, storage and more.</p>
         </div>
 
         <div class="feature">
             <h3>CMD Tools</h3>
-            <p>Useful commands, simplified and ready to run with one click.</p>
+            <p>Essential commands and utilities, simplified and accessible with a single click — no need to memorize anything.</p>
         </div>
 
         <div class="feature">
             <h3>Minimal UI</h3>
-            <p>A calm, cinematic interface inspired by premium software design.</p>
+            <p>A calm, cinematic interface inspired by premium dashboard design and clean visual hierarchy.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Instant Access</h3>
+            <p>Everything you need is organized in one place — no hidden menus, no unnecessary steps.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Lightweight</h3>
+            <p>Optimized to run smoothly without consuming system resources or affecting performance.</p>
         </div>
     </div>
 </section>
@@ -84,6 +127,67 @@
 <footer>
     © 2024-2026 UsageX by AVARIX — All rights reserved.
 </footer>
+
+<script>
+// DOT SCROLLBAR – generate dots
+const dotContainer = document.getElementById("dot-scrollbar");
+const totalDots = 40;
+
+for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dotContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+function updateDots() {
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const activeIndex = Math.floor(scrollPercent * (totalDots - 1));
+
+    dots.forEach((dot, index) => {
+        dot.classList.remove("active-main", "active-secondary");
+
+        if (index === activeIndex) {
+            dot.classList.add("active-main");
+        }
+
+        if (index === activeIndex - 1 || index === activeIndex + 1) {
+            dot.classList.add("active-secondary");
+        }
+    });
+}
+
+// GRADIENT PER SECTION
+const sections = document.querySelectorAll("section");
+
+function updateSectionGradient() {
+    let scrollPos = window.scrollY + window.innerHeight / 2;
+    let applied = false;
+
+    sections.forEach(sec => {
+        let top = sec.offsetTop;
+        let bottom = top + sec.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            document.body.className = "section-" + sec.id;
+            applied = true;
+        }
+    });
+
+    if (!applied && window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        document.body.className = "section-footer";
+    }
+}
+
+window.addEventListener("scroll", () => {
+    updateDots();
+    updateSectionGradient();
+});
+
+updateDots();
+updateSectionGradient();
+</script>
 
 </body>
 </html>
